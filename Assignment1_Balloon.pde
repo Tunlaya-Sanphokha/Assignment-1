@@ -1,18 +1,24 @@
 //Tunlaya Sanphokha
 ///date 11/08/2020
-///step 4
-///Now we'll make my balloon move.  we're going to use y-position subtraction.
-Balloon balloon1 = new Balloon(70,70,70,color(203,203,0));   // that balloon variable1 calls the class //variable balloon1 have position x,y and color code
+///step 5
+///If you want multiple balloons. you can set variable balloons and call the method of  class Balloon
+///or if you want to change balloon size or balloon color You can do it :D Now it's done, yeah!!! :D
 
-
+Balloon balloon1 = new Balloon(70,70,70,color(225,0,0));   // that balloon variable1 calls the class //variable balloon1 have position x,y and color code
+Balloon balloon2 = new Balloon(250,200,90,color(250,211,23)); //this is balloon added that balloon variable1 calls the class //variable balloon1 have position x,y and color code
+Balloon balloon3 = new Balloon(350,120,100,color(225,0,205)); 
 void setup(){
   size(500,500); 
 }
 
 void draw(){
   background(255,200,200);   //use background(color code)
-  balloon1.draw_ball(); // variable balloon1 call the method of class 
+  balloon1.draw_ball(); // variable balloon1 call the method  of class 
   balloon1.move();  // variable  balloon1 call the method of class
+  balloon2.draw_ball(); //variable  balloon2 call the method  of class
+  balloon2.move();    //variable balloon2 call the method of class
+  balloon3.draw_ball();
+  balloon3.move();
 }
 class Balloon{
   float pos_x;  //variable keep position x
@@ -28,7 +34,7 @@ class Balloon{
     c = color_; //variable keep parameter  color_ of  balloon
     y = 1; ///variable y keep y-position
   }
-  void draw_ball(){
+  void draw_ball(){ //create function for draw balloons
     fill(c); // create color of balloon
     circle(pos_x,pos_y,sizeball);  //create x , y and sizebal of balloon
     line(pos_x,pos_y+(sizeball/2),pos_x,pos_y+(sizeball/2)+sizeball); //create line of balloon
